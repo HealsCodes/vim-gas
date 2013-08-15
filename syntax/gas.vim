@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:     GNU as (AT&T) assembler for X86
 " Maintainer:   Rene Koecher <shirk@bitspin.org>
-" Last Change:  2009 Dec 29
-" Version:      0.8
+" Last Change:  2013 Aug 15
+" Version:      0.9
 " Remark:       Intel compatible instructions only (for now)
 " License:      BSD (3 clause), see LICENSE
 "
@@ -760,7 +760,7 @@ syn keyword gasOpcode_PENT_MMX		pmvgezb pmvgezbb pmvgezbw pmvgezbl pmvgezbq
 syn keyword gasOpcode_PENT_MMX		pmvlzb pmvlzbb pmvlzbw pmvlzbl pmvlzbq
 syn keyword gasOpcode_PENT_MMX		pmvnzb pmvnzbb pmvnzbw pmvnzbl pmvnzbq
 syn keyword gasOpcode_PENT_MMX		pmvzb pmvzbb pmvzbw pmvzbl pmvzbq
-syn keyword gasOpcode_386_Base		pop
+syn keyword gasOpcode_386_Base		pop popb popw popl popq
 syn keyword gasOpcode_186_Base		popa
 syn keyword gasOpcode_386_Base		popad
 syn keyword gasOpcode_186_Base		popaw
