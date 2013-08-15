@@ -91,7 +91,7 @@ This syntax file can either be installed manually or by using pathogen.
 
 ### Manual Installation
 
-Download gas.vim and the file to .vim/syntax/ in your home folder. 
+Download gas.vim and copy the file to .vim/syntax/ in your home folder. 
 Add this line to the end of your file: 
 
 ```vim
