@@ -119,4 +119,4 @@ Add this line to the end of your file:
 
 ## License ##
 
-BSD (3 clause) - see COPYING for details
+BSD (3 clause) - see LICENSE for details
