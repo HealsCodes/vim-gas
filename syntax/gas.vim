@@ -40,7 +40,7 @@ syn keyword gasDirective	.vtable_entry .vtable_inherit .warning .weak .weakref
 syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float
 syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
 
-syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .end .func .endfunc
+syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .endm .func .endfunc
 
 " i*86 directives
 syn keyword gasDirectiveX86	.att_syntax .intel_syntax .att_mnemonic .intel_mnemonic .lcomm
@@ -762,7 +762,7 @@ syn keyword gasOpcode_PENT_MMX		pmvnzb pmvnzbb pmvnzbw pmvnzbl pmvnzbq
 syn keyword gasOpcode_PENT_MMX		pmvzb pmvzbb pmvzbw pmvzbl pmvzbq
 syn keyword gasOpcode_386_Base		pop popb popw popl popq
 syn keyword gasOpcode_186_Base		popa
-syn keyword gasOpcode_386_Base		popad
+syn keyword gasOpcode_386_Base		popal
 syn keyword gasOpcode_186_Base		popaw
 syn keyword gasOpcode_8086_Base		popf
 syn keyword gasOpcode_386_Base		popfd popfl
@@ -795,7 +795,7 @@ syn keyword gasOpcode_PENT_MMX		punpckldq punpckldqb punpckldqw punpckldql punpc
 syn keyword gasOpcode_PENT_MMX		punpcklwd punpcklwdb punpcklwdw punpcklwdl punpcklwdq
 syn keyword gasOpcode_X64_Base		push pushb pushw pushl pushq
 syn keyword gasOpcode_186_Base		pusha
-syn keyword gasOpcode_386_Base		pushad
+syn keyword gasOpcode_386_Base		pushal
 syn keyword gasOpcode_186_Base		pushaw
 syn keyword gasOpcode_8086_Base		pushf
 syn keyword gasOpcode_386_Base		pushfd
