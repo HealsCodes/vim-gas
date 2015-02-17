@@ -37,7 +37,7 @@ syn keyword gasDirective	.space .stabd .stabn .stabs .struct .subsection
 syn keyword gasDirective	.symver .tag .text .title .type .uleb128 .val .version
 syn keyword gasDirective	.vtable_entry .vtable_inherit .warning .weak .weakref
 
-syn keyword gasDirectiveStore	.2byte .4byte .8byte
+
 syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float
 syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
 
@@ -83,6 +83,18 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
 syn region  gasComment		start=/\/\*/ end=/\*\//
 syn region  gasCommentSingle    start=/#/ end=/$/
+
+" ARM specific directives
+syn keyword gasDirectiveStoreARM	.2byte .4byte .8byte 
+
+syn keyword gasDirectiveARM	.arch .arch_expression .arm .ascii .asciiz .bss .cantunwind .code .cpu .dn .qn .eabi_attribute .even .extend .ldouble .fnend .fbstart .force_thumb .fpu .handlerdata .inst .inst.n .inst.w .ltorg .lmovsp .movsp .object_arch .packed .pad .personality .personalityindex .pool .req .save .setfp .secrel32 .syntax .thumb .thumb_func .thumb_set .tlsdescseq .unreq .unwind_raw .vsave
+
+" ARM register set
+" Must be defined after gasSymbol to have higher precedence
+syn keyword gasRegisterARM	        sp lr pc
+syn match   gasRegisterARM	        /\<%\?r\([0-9]\|1[0-5]\)\>/
+
+syn keyword gasDirectiveMacroARM	.dn .dq .req .unreq .tlsdescseq
 
 " finally: Opcodes
 "
@@ -1908,11 +1920,15 @@ syn keyword gasOpcode_ARM_THUMB         tstge tstlt tstgt tstle tstal
 
 
 " links
-hi def link gasDirectiveX86	gasDirective
-hi def link gasRegisterX86	gasRegister
-hi def link gasRegisterX86Cr	gasRegister
-hi def link gasRegisterX86Dr	gasRegister
-hi def link gasRegisterX86MMX	gasRegister
+hi def link gasDirectiveX86	        gasDirective
+hi def link gasRegisterX86	        gasRegister
+hi def link gasRegisterX86Cr	        gasRegister
+hi def link gasRegisterX86Dr	        gasRegister
+hi def link gasRegisterX86MMX	        gasRegister
+hi def link gasDirectiveARM	        gasDirective
+hi def link gasRegisterARM	        gasRegister
+hi def link gasDirectiveMacroARM	gasDirectiveMacro
+hi def link gasDirectiveStoreARM	gasDirectiveStore
 
 " link to defaults
 hi def link gasDirective	Preproc
