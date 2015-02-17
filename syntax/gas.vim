@@ -83,6 +83,7 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
 syn region  gasComment		start=/\/\*/ end=/\*\//
 syn region  gasCommentSingle    start=/#/ end=/$/
+syn region  gasCommentSingle    start=/@/ end=/$/
 
 " ARM specific directives
 syn keyword gasDirectiveStoreARM	.2byte .4byte .8byte 
