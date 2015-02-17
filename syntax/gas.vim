@@ -1822,7 +1822,7 @@ syn keyword gasOpcode_ARM_THUMB         bvc bhi bls bge blt bgt ble bal
 syn keyword gasOpcode_ARM_THUMB         bl bleq blne blcs blhs blcc bllo blmi
 syn keyword gasOpcode_ARM_THUMB         blpl blvs blvc blhi blls blge bllt blgt
 syn keyword gasOpcode_ARM_THUMB         blle blal
-syn keyword gasOpcode_ARM_THUMB         bxpl bxvs bxvc bxhi bxls bxge bxlt bxgt
+syn keyword gasOpcode_ARM_THUMB         bx bxpl bxvs bxvc bxhi bxls bxge bxlt bxgt
 syn keyword gasOpcode_ARM_THUMB         bxle
 syn keyword gasOpcode_ARM_THUMB         blx blxeq blxne  blxcs  blxhs  blxcc
 syn keyword gasOpcode_ARM_THUMB         blxlo  blxmi  blxpl  blxvs  blxvc  blxhi
