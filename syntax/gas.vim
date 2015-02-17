@@ -37,6 +37,7 @@ syn keyword gasDirective	.space .stabd .stabn .stabs .struct .subsection
 syn keyword gasDirective	.symver .tag .text .title .type .uleb128 .val .version
 syn keyword gasDirective	.vtable_entry .vtable_inherit .warning .weak .weakref
 
+syn keyword gasDirectiveStore	.2byte .4byte .8byte
 syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float
 syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
 
@@ -1791,6 +1792,120 @@ syn keyword gasOpcode_AMD_SSE4A		insertq
 syn keyword gasOpcode_AMD_SSE4A		movntsd movntsdb movntsdw movntsdl movntsdq
 syn keyword gasOpcode_AMD_SSE4A		movntss movntssb movntssw movntssl movntssq
 
+"-- Section: ARM Thumb
+syn keyword gasOpcode_ARM_THUMB         adc adceq adcne adccs adchs adccc adclo
+syn keyword gasOpcode_ARM_THUMB         adcmi adcpl adcvs adcvc adchi adcls
+syn keyword gasOpcode_ARM_THUMB         adcge adclt adcgt adcle adcal
+syn keyword gasOpcode_ARM_THUMB         add addeq addne addcs addhs addcc addlo
+syn keyword gasOpcode_ARM_THUMB         addmi addpl addvs addvc addhi addls
+syn keyword gasOpcode_ARM_THUMB         addge addlt addgt addle addal
+syn keyword gasOpcode_ARM_THUMB         and andeq andne andcs andhs andcc andlo
+syn keyword gasOpcode_ARM_THUMB         andmi andpl andvs andvc andhi andls
+syn keyword gasOpcode_ARM_THUMB         andge andlt andgt andle andal
+syn keyword gasOpcode_ARM_THUMB         asr asreq asrne asrcs asrhs asrcc asrlo
+syn keyword gasOpcode_ARM_THUMB         asrmi asrpl asrvs asrvc asrhi asrls
+syn keyword gasOpcode_ARM_THUMB         asrge asrlt asrgt asrle asral
+syn keyword gasOpcode_ARM_THUMB         b beq bne bcs bhs bcc blo bmi bpl bvs
+syn keyword gasOpcode_ARM_THUMB         bvc bhi bls bge blt bgt ble bal
+syn keyword gasOpcode_ARM_THUMB         bl bleq blne blcs blhs blcc bllo blmi
+syn keyword gasOpcode_ARM_THUMB         blpl blvs blvc blhi blls blge bllt blgt
+syn keyword gasOpcode_ARM_THUMB         blle blal
+syn keyword gasOpcode_ARM_THUMB         bxpl bxvs bxvc bxhi bxls bxge bxlt bxgt
+syn keyword gasOpcode_ARM_THUMB         bxle
+syn keyword gasOpcode_ARM_THUMB         blx blxeq blxne  blxcs  blxhs  blxcc
+syn keyword gasOpcode_ARM_THUMB         blxlo  blxmi  blxpl  blxvs  blxvc  blxhi
+syn keyword gasOpcode_ARM_THUMB         blxls  blxge  blxlt  blxgt  blxle  blxal
+syn keyword gasOpcode_ARM_THUMB         bi biceq bicne biccs bichs biccc biclo
+syn keyword gasOpcode_ARM_THUMB         bicmi bicpl bicvs bicvc bichi bicls
+syn keyword gasOpcode_ARM_THUMB         bicge biclt bicgt bicle bical
+syn keyword gasOpcode_ARM_THUMB         cmn cmneq cmnne cmncs cmnhs cmncc cmnlo
+syn keyword gasOpcode_ARM_THUMB         cmnmi cmnpl cmnvs cmnvc cmnhi cmnls
+syn keyword gasOpcode_ARM_THUMB         cmnge cmnlt cmngt cmnle cmnal
+syn keyword gasOpcode_ARM_THUMB         cmp cmpeq cmpne cmpcs cmphs cmpcc cmplo
+syn keyword gasOpcode_ARM_THUMB         cmpmi cmppl cmpvs cmpvc cmphi cmpls
+syn keyword gasOpcode_ARM_THUMB         cmpge cmplt cmpgt cmple cmpal
+syn keyword gasOpcode_ARM_THUMB         eor eoreq eorne eorcs eorhs eorcc eorlo
+syn keyword gasOpcode_ARM_THUMB         eormi eorpl eorvs eorvc eorhi eorls
+syn keyword gasOpcode_ARM_THUMB         eorge eorlt eorgt eorle eoral
+syn keyword gasOpcode_ARM_THUMB         ldmia ldmiaeq ldmiane ldmiacs ldmiahs
+syn keyword gasOpcode_ARM_THUMB         ldmiacc ldmialo ldmiami ldmiapl ldmiavs
+syn keyword gasOpcode_ARM_THUMB         ldmiavc ldmiahi ldmials ldmiage ldmialt
+syn keyword gasOpcode_ARM_THUMB         ldmiagt ldmiale ldmiaal
+syn keyword gasOpcode_ARM_THUMB         ldr ldreq ldrne ldrcs ldrhs ldrcc ldrlo
+syn keyword gasOpcode_ARM_THUMB         ldrmi ldrpl ldrvs ldrvc ldrhi ldrls
+syn keyword gasOpcode_ARM_THUMB         ldrge ldrlt ldrgt ldrle ldral
+syn keyword gasOpcode_ARM_THUMB         ldrb ldrbeq ldrbne ldrbcs ldrbhs ldrbcc
+syn keyword gasOpcode_ARM_THUMB         ldrblo ldrbmi ldrbpl ldrbvs ldrbvc
+syn keyword gasOpcode_ARM_THUMB         ldrbhi ldrbls ldrbge ldrblt ldrbgt
+syn keyword gasOpcode_ARM_THUMB         ldrble ldrbal
+syn keyword gasOpcode_ARM_THUMB         ldrh ldrheq ldrhne ldrhcs ldrhhs ldrhcc
+syn keyword gasOpcode_ARM_THUMB         ldrhlo ldrhmi ldrhpl ldrhvs ldrhvc
+syn keyword gasOpcode_ARM_THUMB         ldrhhi ldrhls ldrhge ldrhlt ldrhgt
+syn keyword gasOpcode_ARM_THUMB         ldrhle ldrhal
+syn keyword gasOpcode_ARM_THUMB         lsl lsleq lslne lslcs lslhs lslcc lsllo
+syn keyword gasOpcode_ARM_THUMB         lslmi lslpl lslvs lslvc lslhi lslls
+syn keyword gasOpcode_ARM_THUMB         lslge lsllt lslgt lslle lslal
+syn keyword gasOpcode_ARM_THUMB         ldsb ldsbeq ldsbne ldsbcs ldsbhs ldsbcc
+syn keyword gasOpcode_ARM_THUMB         ldsblo ldsbmi ldsbpl ldsbvs ldsbvc
+syn keyword gasOpcode_ARM_THUMB         ldsbhi ldsbls ldsbge ldsblt ldsbgt
+syn keyword gasOpcode_ARM_THUMB         ldsble ldsbal
+syn keyword gasOpcode_ARM_THUMB         ldsd ldsheq ldshne ldshcs ldshhs ldshcc
+syn keyword gasOpcode_ARM_THUMB         ldshlo ldshmi ldshpl ldshvs ldshvc
+syn keyword gasOpcode_ARM_THUMB         ldshhi ldshls ldshge ldshlt ldshgt
+syn keyword gasOpcode_ARM_THUMB         ldshle ldshal
+syn keyword gasOpcode_ARM_THUMB         mov moveq movne movcs movhs movcc movlo
+syn keyword gasOpcode_ARM_THUMB         movmi movpl movvs movvc movhi movls
+syn keyword gasOpcode_ARM_THUMB         movge movlt movgt movle moval
+syn keyword gasOpcode_ARM_THUMB         mul muleq mulne mulcs mulhs mulcc mullo
+syn keyword gasOpcode_ARM_THUMB         mulmi mulpl mulvs mulvc mulhi mulls
+syn keyword gasOpcode_ARM_THUMB         mulge mullt mulgt mulle mulal
+syn keyword gasOpcode_ARM_THUMB         mvn mvneq mvnne mvncs mvnhs mvncc mvnlo
+syn keyword gasOpcode_ARM_THUMB         mvnmi mvnpl mvnvs mvnvc mvnhi mvnls
+syn keyword gasOpcode_ARM_THUMB         mvnge mvnlt mvngt mvnle mvnal
+syn keyword gasOpcode_ARM_THUMB         neg negeq negne negcs neghs negcc neglo
+syn keyword gasOpcode_ARM_THUMB         negmi negpl negvs negvc neghi negls
+syn keyword gasOpcode_ARM_THUMB         negge neglt neggt negle negal
+syn keyword gasOpcode_ARM_THUMB         or orreq orrne orrcs orrhs orrcc orrlo
+syn keyword gasOpcode_ARM_THUMB         orrmi orrpl orrvs orrvc orrhi orrls
+syn keyword gasOpcode_ARM_THUMB         orrge orrlt orrgt orrle orral
+syn keyword gasOpcode_ARM_THUMB         pop popeq popne popcs pophs popcc poplo
+syn keyword gasOpcode_ARM_THUMB         popmi poppl popvs popvc pophi popls
+syn keyword gasOpcode_ARM_THUMB         popge poplt popgt pople popal
+syn keyword gasOpcode_ARM_THUMB         push pusheq pushne pushcs pushhs pushcc
+syn keyword gasOpcode_ARM_THUMB         pushlo pushmi pushpl pushvs pushvc
+syn keyword gasOpcode_ARM_THUMB         pushhi pushls pushge pushlt pushgt
+syn keyword gasOpcode_ARM_THUMB         pushle pushal
+syn keyword gasOpcode_ARM_THUMB         ror roreq rorne rorcs rorhs rorcc rorlo
+syn keyword gasOpcode_ARM_THUMB         rormi rorpl rorvs rorvc rorhi rorls
+syn keyword gasOpcode_ARM_THUMB         rorge rorlt rorgt rorle roral
+syn keyword gasOpcode_ARM_THUMB         sb sbceq sbcne sbccs sbchs sbccc sbclo
+syn keyword gasOpcode_ARM_THUMB         sbcmi sbcpl sbcvs sbcvc sbchi sbcls
+syn keyword gasOpcode_ARM_THUMB         sbcge sbclt sbcgt sbcle sbcal
+syn keyword gasOpcode_ARM_THUMB         stmia stmiaeq stmiane stmiacs stmiahs
+syn keyword gasOpcode_ARM_THUMB         stmiacc stmialo stmiami stmiapl stmiavs
+syn keyword gasOpcode_ARM_THUMB         stmiavc stmiahi stmials stmiage stmialt
+syn keyword gasOpcode_ARM_THUMB         stmiagt stmiale stmiaal
+syn keyword gasOpcode_ARM_THUMB         str streq strne strcs strhs strcc strlo
+syn keyword gasOpcode_ARM_THUMB         strmi strpl strvs strvc strhi strls
+syn keyword gasOpcode_ARM_THUMB         strge strlt strgt strle stral
+syn keyword gasOpcode_ARM_THUMB         strb strbeq strbne strbcs strbhs strbcc
+syn keyword gasOpcode_ARM_THUMB         strblo strbmi strbpl strbvs strbvc
+syn keyword gasOpcode_ARM_THUMB         strbhi strbls strbge strblt strbgt
+syn keyword gasOpcode_ARM_THUMB         strble strbal
+syn keyword gasOpcode_ARM_THUMB         strh strheq strhne strhcs strhhs strhcc
+syn keyword gasOpcode_ARM_THUMB         strhlo strhmi strhpl strhvs strhvc
+syn keyword gasOpcode_ARM_THUMB         strhhi strhls strhge strhlt strhgt
+syn keyword gasOpcode_ARM_THUMB         strhle strhal
+syn keyword gasOpcode_ARM_THUMB         swi swieq swine swics swihs swicc swilo
+syn keyword gasOpcode_ARM_THUMB         swimi swipl swivs swivc swihi swils
+syn keyword gasOpcode_ARM_THUMB         swige swilt swigt swile swial
+syn keyword gasOpcode_ARM_THUMB         sub subeq subne subcs subhs subcc sublo
+syn keyword gasOpcode_ARM_THUMB         submi subpl subvs subvc subhi subls
+syn keyword gasOpcode_ARM_THUMB         subge sublt subgt suble subal
+syn keyword gasOpcode_ARM_THUMB         tst tsteq tstne tstcs tsths tstcc tstlo
+syn keyword gasOpcode_ARM_THUMB         tstmi tstpl tstvs tstvc tsthi tstls
+syn keyword gasOpcode_ARM_THUMB         tstge tstlt tstgt tstle tstal
+
 
 " links
 hi def link gasDirectiveX86	gasDirective
@@ -1853,6 +1968,7 @@ call <SID>MapOpcode('gasOpcode_486_Base'       , '486'        , 'base')
 call <SID>MapOpcode('gasOpcode_8086_Base'      , '8086'       , 'base')
 call <SID>MapOpcode('gasOpcode_AMD_SSE4A'      , 'amd'        , 'sse4a')
 call <SID>MapOpcode('gasOpcode_AMD_SSE5'       , 'amd'        , 'sse5')
+call <SID>MapOpcode('gasOpcode_ARM_THUMB'      , 'arm'        , 'thumb')
 call <SID>MapOpcode('gasOpcode_FUTURE_FMA'     , 'future'     , 'fma')
 call <SID>MapOpcode('gasOpcode_IA64_Base'      , 'ia64'       , 'base')
 call <SID>MapOpcode('gasOpcode_KATMAI_Base'    , 'katmai'     , 'base')
