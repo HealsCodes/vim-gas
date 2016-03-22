@@ -84,10 +84,28 @@ recognized extension groups:
 
 I hope this syntax file will be useful to other people 
   \- but don't blame me if it doesn't suit your needs. 
- 
+
+## CPP preprocessor macros
+
+GAS allows code to be processed by the same preprocessor used for C/C++ code. 
+So directives like `#include`, `#define` etc. will be highlighted using the C 
+syntax highlighter if available. 
+
+This behavior can be turned off by setting the `gasDisablePreproc` option 
+either globally in your .vimrc or on a per-buffer basis:
+
+```vim
+" globally disable preprocessor macro detection
+:let g:gasDisablePreproc=1 
+
+
+" disable only for this buffer 
+let gasDisablePreproc=1 
+```
+
 ## Installation
 
-This syntax file can either be installed manually or by using pathogen.
+This syntax file can either be installed manually, by using pathogen or vundle.
 
 ### Manual Installation
 
@@ -116,6 +134,15 @@ Add this line to the end of your file:
 
         $ git submodule add https://github.com/Shirk/vim-gas.git bundle/vim-gas
         $ git submodule init
+
+## Installation with Vundle
+
+- Install and setup [vundle](https://github.com/VundleVim/Vundle.vim) then add this to your `~/.vimrc` inside
+   the `vundle#begin()` / `vundle#end()` block:
+
+        Plugin shirk/vim-gas
+
+- Restart your vim and call `VundleInstall`
 
 ## License ##
 
