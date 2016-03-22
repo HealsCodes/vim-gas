@@ -2013,13 +2013,14 @@ call <SID>MapOpcode('gasOpcode_X64_VMX'        , 'x64'        , 'vmx')
 call <SID>MapOpcode('gasOpcode_X86_64_Base'    , 'x64'        , 'base')
 
 " support CPP preprocessor tags
-syn case match
+if !exists('g:gasDisablePreproc') && !exists('b:gasDisablePreproc')
+	syn case match
 
-syn include @cPP syntax/c.vim
-syn match   cPPLineCont "\\$" contained
+	syn include @cPP syntax/c.vim
+	syn match   cPPLineCont "\\$" contained
 
-syn region  cPPPreProc start=/^\s*#\s*\(if\|else\|endif\|define\|include\)/ end=/$/ contains=@cPP,cPPLineCont
-
+	syn region  cPPPreProc start=/^\s*#\s*\(if\|else\|endif\|define\|include\)/ end=/$/ contains=@cPP,cPPLineCont
+endif
 
 " finishing touches
 let b:current_syntax = "gas"
