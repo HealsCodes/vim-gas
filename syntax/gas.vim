@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:     GNU as (AT&T) assembler for X86
 " Maintainer:   Rene Koecher <shirk@bitspin.org>
-" Last Change:  2016 Mar 22
-" Version:      0.10
+" Last Change:  2016 Jul 08
+" Version:      0.11
 " Remark:       Intel compatible instructions only (for now)
 " License:      BSD (3 clause), see LICENSE
 "
@@ -84,6 +84,9 @@ syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
 syn region  gasComment		start=/\/\*/ end=/\*\//
 syn region  gasCommentSingle    start=/#/ end=/$/
 syn region  gasCommentSingle    start=/@/ end=/$/
+if exists('g:gasCppComments')
+	syn region  gasCommentSingle start=/\/\// end=/$/
+endif
 
 " ARM specific directives
 syn keyword gasDirectiveStoreARM	.2byte .4byte .8byte 
