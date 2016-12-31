@@ -44,7 +44,7 @@ syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
 syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .endm .func .endfunc
 
 " i*86 directives
-syn keyword gasDirectiveX86	.att_syntax .intel_syntax .att_mnemonic .intel_mnemonic .lcomm
+syn keyword gasDirectiveX86	.att_syntax .intel_syntax .att_mnemonic .intel_mnemonic .code16 .code32 .code64 .lcomm
 
 " i*86 register set
 syn keyword gasRegisterX86	%rax %rbx %rcx %rdx %rdi %rsi %rsp %rbp
