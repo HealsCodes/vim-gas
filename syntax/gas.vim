@@ -1922,6 +1922,21 @@ syn keyword gasOpcode_ARM_THUMB         tst tsteq tstne tstcs tsths tstcc tstlo
 syn keyword gasOpcode_ARM_THUMB         tstmi tstpl tstvs tstvc tsthi tstls
 syn keyword gasOpcode_ARM_THUMB         tstge tstlt tstgt tstle tstal
 
+"-- Section: AVR
+syn keyword gasOpcode_AVR       adc add adiw and andi asr
+syn keyword gasOpcode_AVR       bclr bld brbc brbs brcc brcs break breq brge
+syn keyword gasOpcode_AVR       brhc brhs brid brie brlo brlt brmi brne brpl
+syn keyword gasOpcode_AVR       brsh brtc brts brvc brvs bset bst
+syn keyword gasOpcode_AVR       call cbi cbr clc clh cli cln clr cls clt clv
+syn keyword gasOpcode_AVR       clz com cp cpc cpi cpse dec des eicall eijmp
+syn keyword gasOpcode_AVR       elpm eor fmul fmuls fmulsu icall ijmp in inc
+syn keyword gasOpcode_AVR       jmp lac las lat ld ldd ldi lds lpm lsl lsr
+syn keyword gasOpcode_AVR       mov movw mul muls mulsu neg nop or ori out
+syn keyword gasOpcode_AVR       pop push rcall ret reti rjmp rol ror sbc sbci
+syn keyword gasOpcode_AVR       sbi sbic sbis sbiw sbr sbrc sbrs sec seh sei
+syn keyword gasOpcode_AVR       sen ser ses set sev sez sleep spm st std sts
+syn keyword gasOpcode_AVR       sub subi swap tst wdr xch
+
 
 " links
 hi def link gasDirectiveX86	        gasDirective
@@ -1989,6 +2004,7 @@ call <SID>MapOpcode('gasOpcode_8086_Base'      , '8086'       , 'base')
 call <SID>MapOpcode('gasOpcode_AMD_SSE4A'      , 'amd'        , 'sse4a')
 call <SID>MapOpcode('gasOpcode_AMD_SSE5'       , 'amd'        , 'sse5')
 call <SID>MapOpcode('gasOpcode_ARM_THUMB'      , 'arm'        , 'thumb')
+call <SID>MapOpcode('gasOpcode_AVR'            , 'avr'        , 'base')
 call <SID>MapOpcode('gasOpcode_FUTURE_FMA'     , 'future'     , 'fma')
 call <SID>MapOpcode('gasOpcode_IA64_Base'      , 'ia64'       , 'base')
 call <SID>MapOpcode('gasOpcode_KATMAI_Base'    , 'katmai'     , 'base')
