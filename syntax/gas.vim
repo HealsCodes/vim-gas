@@ -26,7 +26,7 @@ syn keyword gasDirective	.cfi_adjust_cfa_offset .cfi_offset .cfi_rel_offset .cfi
 syn keyword gasDirective	.cfi_restore .cfi_undefined .cfi_same_value .cfi_remember_state
 syn keyword gasDirective	.cfi_return_column .cfi_signal_frame .cfi_window_save .cfi_escape
 syn keyword gasDirective	.cfi_val_encoded_addr .data .def .desc .dim .eject
-syn keyword gasDirective	.else .elseif .endef .endif .equ .equiv .eqv .err
+syn keyword gasDirective	.else .elseif .endef .endif .endr .equ .equiv .eqv .err
 syn keyword gasDirective	.error .exitm .extern .fail .file .fill .global .globl
 syn keyword gasDirective	.gnu_attribute .hidden .ident .if .incbin .include .internal
 syn keyword gasDirective	.irp .irpc .lcomm .lflags .line .linkonce .list .ln .loc .loc_mark_labels
@@ -41,7 +41,7 @@ syn keyword gasDirective	.vtable_entry .vtable_inherit .warning .weak .weakref
 syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float
 syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
 
-syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .endm .func .endfunc
+syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .endm .endmacro .func .endfunc
 
 " i*86 directives
 syn keyword gasDirectiveX86	.att_syntax .intel_syntax .att_mnemonic .intel_mnemonic .code16 .code32 .code64 .lcomm
