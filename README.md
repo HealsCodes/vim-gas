@@ -7,14 +7,14 @@ This file defines a (almost) complete syntax for GNU as assembler.
 My motivation in writing this was the lack of a complete, working syntax for this 
 common assembler. 
 
-For now the basic as directives as well as the Intel / AMD instruction sets are included. 
+For now the basic as directives as well as the Intel / AMD, ARM (thumb) and AVR instruction sets are included. 
 Opcodes supporting a size suffix are recognized plain as well as suffixed with b/w/l/q. 
 
 ## What does it look like?
 
 ![screenshot here..](https://raw.githubusercontent.com/Shirk/vim-gas/master/sample.png)
 
-## Supported instructions a per version 0.6: 
+## Supported instructions a per version 0.13: 
 
 - X86 common instruction set (8086 - 686) 
 - Katmai Streaming SIMD instructions (SSE -- a.k.a. KNI, XMM, MMX2) 
@@ -46,6 +46,8 @@ Opcodes supporting a size suffix are recognized plain as well as suffixed with b
 - VIA (Centaur) security instructions 
 - AMD XOP, FMA4 and CVT16 instructions (SSE5) 
 - Systematic names for the hinting nop instructions 
+- ARM (Thumb)
+- AVR
 
 You can set different highlighting for each set listed above by adding a line like this to you .vimrc: 
 
