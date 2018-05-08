@@ -1,9 +1,9 @@
 " Vim syntax file
 " Language:     GNU as (AT&T) assembler for X86
-" Maintainer:   Rene Koecher <shirk@bitspin.org>
-" Last Change:  2016 Jul 08
-" Version:      0.11
-" Remark:       Intel compatible instructions only (for now)
+" Maintainer:   Rene Koecher <info@bitspin.org>
+" Last Change:  2018 May 08
+" Version:      0.13
+" Remark:       Intel and AVR compatible instructions only (for now)
 " License:      BSD (3 clause), see LICENSE
 "
 
