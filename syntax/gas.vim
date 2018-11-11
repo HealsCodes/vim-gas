@@ -20,6 +20,7 @@ syn case ignore
 
 " directives
 syn keyword gasDirective	.abort .ABORT .align .balignw .balignl
+syn keyword gasDirective	.bundle_align_mode .bundle_lock .bundle_unlock .bss
 syn keyword gasDirective	.cfi_startproc .cfi_sections .cfi_endproc .cfi_personality
 syn keyword gasDirective	.cfi_lsda .cfi_def_cfa .cfi_def_cfa_register .cfi_def_cfa_offset
 syn keyword gasDirective	.cfi_adjust_cfa_offset .cfi_offset .cfi_rel_offset .cfi_register
@@ -30,16 +31,16 @@ syn keyword gasDirective	.else .elseif .endef .endif .endr .equ .equiv .eqv .err
 syn keyword gasDirective	.error .exitm .extern .fail .file .fill .global .globl
 syn keyword gasDirective	.gnu_attribute .hidden .ident .if .incbin .include .internal
 syn keyword gasDirective	.irp .irpc .lcomm .lflags .line .linkonce .list .ln .loc .loc_mark_labels
-syn keyword gasDirective	.local .mri .nolist .octa .org .p2alignw .p2alignl
-syn keyword gasDirective	.popsection .previous .print .protected .psize .purgem .pushsection .quad
+syn keyword gasDirective	.local .mri .nolist .org .p2alignw .p2alignl
+syn keyword gasDirective	.popsection .previous .print .protected .psize .purgem .pushsection
 syn keyword gasDirective	.reloc .rept .sbttl .scl .section .set .single .size .skip .sleb128
-syn keyword gasDirective	.space .stabd .stabn .stabs .struct .subsection
+syn keyword gasDirective	.stabd .stabn .stabs .struct .subsection
 syn keyword gasDirective	.symver .tag .text .title .type .uleb128 .val .version
 syn keyword gasDirective	.vtable_entry .vtable_inherit .warning .weak .weakref
 
 
-syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float
-syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
+syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float .quad .octa
+syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm .space
 
 syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .endm .endmacro .func .endfunc
 
@@ -89,9 +90,9 @@ if exists('g:gasCppComments')
 endif
 
 " ARM specific directives
-syn keyword gasDirectiveStoreARM	.2byte .4byte .8byte 
+syn keyword gasDirectiveStoreARM	.2byte .4byte .8byte
 
-syn keyword gasDirectiveARM	.arch .arch_expression .arm .ascii .asciiz .bss .cantunwind .code .cpu .dn .qn .eabi_attribute .even .extend .ldouble .fnend .fbstart .force_thumb .fpu .handlerdata .inst .inst.n .inst.w .ltorg .lmovsp .movsp .object_arch .packed .pad .personality .personalityindex .pool .req .save .setfp .secrel32 .syntax .thumb .thumb_func .thumb_set .tlsdescseq .unreq .unwind_raw .vsave
+syn keyword gasDirectiveARM	.arch .arch_expression .arm .asciiz .cantunwind .code .cpu .dn .qn .eabi_attribute .even .extend .ldouble .fnend .fbstart .force_thumb .fpu .handlerdata .inst .inst.n .inst.w .ltorg .lmovsp .movsp .object_arch .packed .pad .personality .personalityindex .pool .req .save .setfp .secrel32 .syntax .thumb .thumb_func .thumb_set .tlsdescseq .unreq .unwind_raw .vsave
 
 " ARM register set
 " Must be defined after gasSymbol to have higher precedence
