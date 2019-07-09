@@ -716,6 +716,7 @@ syn keyword gasOpcode_X64_Base		movsx
 syn keyword gasOpcode_X64_Base		movsxd
 syn keyword gasOpcode_X64_Base		movsx
 syn keyword gasOpcode_X64_Base		movzx
+syn keyword gasOpcode_X64_Base		movzbl
 syn keyword gasOpcode_X64_Base		mul
 syn keyword gasOpcode_PRESCOTT_Base	mwait
 syn keyword gasOpcode_X64_Base		neg
