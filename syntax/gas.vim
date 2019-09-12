@@ -14,7 +14,6 @@ elseif exists("b:current_syntax")
 endif
 
 setlocal iskeyword +=%,.,-,_
-setlocal isident   +=%,.,-,_
 
 syn case ignore
 
