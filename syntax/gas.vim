@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:     GNU as (AT&T) assembler for X86
 " Maintainer:   Rene Koecher <info@bitspin.org>
-" Last Change:  2018 May 08
-" Version:      0.13
+" Last Change:  2019 Sep 12
+" Version:      0.14
 " Remark:       Intel and AVR compatible instructions only (for now)
 " License:      BSD (3 clause), see LICENSE
 "
