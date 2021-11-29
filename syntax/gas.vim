@@ -541,7 +541,7 @@ syn keyword gasOpcode_8086_Base		cwd
 syn keyword gasOpcode_386_Base		cwde
 syn keyword gasOpcode_8086_Base		daa
 syn keyword gasOpcode_8086_Base		das
-syn keyword gasOpcode_X64_Base		dec
+syn keyword gasOpcode_X64_Base		dec decb decw decl decq
 syn keyword gasOpcode_X64_Base		div
 syn keyword gasOpcode_P6_Base		dmint
 syn keyword gasOpcode_PENT_MMX		emms
