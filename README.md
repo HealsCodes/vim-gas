@@ -14,7 +14,7 @@ Opcodes supporting a size suffix are recognized plain as well as suffixed with b
 
 ![screenshot here..](https://raw.githubusercontent.com/Shirk/vim-gas/master/sample.png)
 
-## Supported instructions a per version 0.13: 
+## Supported instructions a per version 0.15: 
 
 - X86 common instruction set (8086 - 686) 
 - Katmai Streaming SIMD instructions (SSE -- a.k.a. KNI, XMM, MMX2) 
@@ -40,6 +40,7 @@ Opcodes supporting a size suffix are recognized plain as well as suffixed with b
 - Intel AES instructions 
 - Intel AVX AES instructions 
 - Intel AVX instructions 
+- Intel AVX2 instructions
 - Intel Carry-Less Multiplication instructions (CLMUL) 
 - Intel AVX Carry-Less Multiplication instructions (CLMUL) 
 - Intel Fused Multiply-Add instructions (FMA) 
