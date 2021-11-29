@@ -59,6 +59,9 @@ syn match gasRegisterX86Dr	/\<%dr[0-8]\>/
 syn match gasRegisterX86Tr	/\<%tr[0-8]\>/
 syn match gasRegisterX86Fp	/\<%sp\(([0-7])\)\?\>/
 syn match gasRegisterX86MMX	/\<%x\?mm[0-7]\>/
+syn match gasRegisterAVX	/\<%ymm\([0-9]\|1[0-5]\)\>/
+syn match gasRegisterAVX512	/\<%ymm\(1[6-9]\|2[0-9]\|3[0-1]\)\>/
+syn match gasRegisterAVX512	/\<%zmm\([0-9]\|[1-2][0-9]\|3[0-1]\)\>/
 
 " symbols and labels
 
@@ -918,6 +921,14 @@ syn keyword gasOpcode_SANDYBRIDGE_AVX	vpclmulhqlqdq vpclmulhqlqdqb vpclmulhqlqdq
 syn keyword gasOpcode_SANDYBRIDGE_AVX	vpclmullqhqdq vpclmullqhqdqb vpclmullqhqdqw vpclmullqhqdql vpclmullqhqdqq
 syn keyword gasOpcode_SANDYBRIDGE_AVX	vpclmulhqhqdq vpclmulhqhqdqb vpclmulhqhqdqw vpclmulhqhqdql vpclmulhqhqdqq
 syn keyword gasOpcode_SANDYBRIDGE_AVX	vpclmulqdq vpclmulqdqb vpclmulqdqw vpclmulqdql vpclmulqdqq
+
+"-- Section: Intel Haswell AVX2 instructions
+syn keyword gasOpcode_HASWELL_AVX2	vbroadcastss vbroadcastssb vbroadcastssw vbroadcastssl vbroadcastssq
+syn keyword gasOpcode_HASWELL_AVX2	vbroadcastsd vbroadcastsdb vbroadcastsdw vbroadcastsdl vbroadcastsdq
+syn keyword gasOpcode_HASWELL_AVX2	vpbroadcastsb vpbroadcastsw vpbroadcastsd vpbroadcastsq
+syn keyword gasOpcode_HASWELL_AVX2	vbroadcasti128 vinserti128 vextracti128 vgatherdpd vgatherqpd vgatherdps vgatherqps
+syn keyword gasOpcode_HASWELL_AVX2	vpgatherdd vpgatherdq vpgatherqd vpgatherqq vpmaskmovd vpmaskmovq vpermps vpermmd
+syn keyword gasOpcode_HASWELL_AVX2	vpermpd vpermq vperm2i128 vpblendd vpsllvd vpsllvq vpsrlvd vpsrlvq vpsravd
 
 "-- Section: AMD SSE5 instructions
 syn keyword gasOpcode_AMD_SSE5		fmaddps fmaddpsb fmaddpsw fmaddpsl fmaddpsq
@@ -1946,6 +1957,8 @@ hi def link gasRegisterX86	        gasRegister
 hi def link gasRegisterX86Cr	        gasRegister
 hi def link gasRegisterX86Dr	        gasRegister
 hi def link gasRegisterX86MMX	        gasRegister
+hi def link gasRegisterAVX	        gasRegister
+hi def link gasRegisterAVX512	        gasRegister
 hi def link gasDirectiveARM	        gasDirective
 hi def link gasRegisterARM	        gasRegister
 hi def link gasDirectiveMacroARM	gasDirectiveMacro
@@ -2024,6 +2037,7 @@ call <SID>MapOpcode('gasOpcode_PENT_MMX'       , 'pentium'    , 'mmx')
 call <SID>MapOpcode('gasOpcode_PRESCOTT_Base'  , 'prescott'   , 'base')
 call <SID>MapOpcode('gasOpcode_PRESCOTT_SSE3'  , 'prescott'   , 'sse3')
 call <SID>MapOpcode('gasOpcode_SANDYBRIDGE_AVX', 'sandybridge', 'avx')
+call <SID>MapOpcode('gasOpcode_HASWELL_AVX2'   , 'haswell'    , 'avx2')
 call <SID>MapOpcode('gasOpcode_X642_Base'      , 'x642'       , 'base')
 call <SID>MapOpcode('gasOpcode_X64_Base'       , 'x64'        , 'base')
 call <SID>MapOpcode('gasOpcode_X64_MMX'        , 'x64'        , 'mmx')
