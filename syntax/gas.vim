@@ -81,6 +81,7 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 
 " comments etc.
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
+syn match   gasTODO		/\s\(TODO\|FIXME\|NOTE\)\(\s\|:\)/
 syn region  gasComment		start=/\/\*/ end=/\*\//
 syn region  gasCommentSingle    start=/#/ end=/$/
 syn region  gasCommentSingle    start=/@/ end=/$/
@@ -1967,6 +1968,7 @@ hi def link gasSpecial		Special
 hi def link gasLabel		Function
 hi def link gasLocalLabel	Label
 hi def link gasOperator		Operator
+hi def link gasTODO		Special
 hi def link gasOpcode		Keyword
 hi def link gasComment		Comment
 hi def link gasCommentSingle	Comment
