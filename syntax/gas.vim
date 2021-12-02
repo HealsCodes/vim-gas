@@ -84,12 +84,12 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 
 " comments etc.
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
-syn match   gasTODO		/\s\(TODO\|FIXME\|NOTE\)\(\s\|:\)/
-syn region  gasComment		start=/\/\*/ end=/\*\//
-syn region  gasCommentSingle    start=/#/ end=/$/
-syn region  gasCommentSingle    start=/@/ end=/$/
+syn match   gasTODO		/\<\(TODO\|FIXME\|NOTE\)\>/ contained
+syn region  gasComment		start=/\/\*/ end=/\*\// contains=gasTODO
+syn region  gasCommentSingle    start=/#/ end=/$/ contains=gasTODO
+syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTODO
 if exists('g:gasCppComments')
-	syn region  gasCommentSingle start=/\/\// end=/$/
+	syn region  gasCommentSingle start=/\/\// end=/$/ contains=gasTODO
 endif
 
 " ARM specific directives
@@ -1981,7 +1981,7 @@ hi def link gasSpecial		Special
 hi def link gasLabel		Function
 hi def link gasLocalLabel	Label
 hi def link gasOperator		Operator
-hi def link gasTODO		Special
+hi def link gasTODO		Todo
 hi def link gasOpcode		Keyword
 hi def link gasComment		Comment
 hi def link gasCommentSingle	Comment
