@@ -30,7 +30,7 @@ syn keyword gasDirective	.else .elseif .endef .endif .endr .equ .equiv .eqv .err
 syn keyword gasDirective	.error .exitm .extern .fail .file .fill .global .globl
 syn keyword gasDirective	.gnu_attribute .hidden .ident .if .incbin .include .internal
 syn keyword gasDirective	.irp .irpc .lcomm .lflags .line .linkonce .list .ln .loc .loc_mark_labels
-syn keyword gasDirective	.local .mri .nolist .org .p2alignw .p2alignl
+syn keyword gasDirective	.local .mri .nolist .org .p2align .p2alignw .p2alignl
 syn keyword gasDirective	.popsection .previous .print .protected .psize .purgem .pushsection
 syn keyword gasDirective	.reloc .rept .sbttl .scl .section .set .single .size .skip .sleb128
 syn keyword gasDirective	.stabd .stabn .stabs .struct .subsection
