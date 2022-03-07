@@ -512,7 +512,7 @@ syn keyword gasOpcode_286_Base		arpl
 syn keyword gasOpcode_PENT_Base		bb0_reset
 syn keyword gasOpcode_PENT_Base		bb1_reset
 syn keyword gasOpcode_386_Base		bound boundb boundw boundl boundq
-syn keyword gasOpcode_X64_Base		bsf
+syn keyword gasOpcode_X64_Base		bsf bsfb bsfw bsfl bsfq
 syn keyword gasOpcode_X64_Base		bsr
 syn keyword gasOpcode_X64_Base		bswap
 syn keyword gasOpcode_X64_Base		bt btb btw btl btq
@@ -2056,7 +2056,7 @@ if !exists('g:gasDisablePreproc') && !exists('b:gasDisablePreproc')
 	syn include @cPP syntax/c.vim
 	syn match   cPPLineCont "\\$" contained
 
-	syn region  cPPPreProc start=/^\s*#\s*\(if\|else\|endif\|define\|include\)/ end=/$/ contains=@cPP,cPPLineCont
+	syn region  cPPPreProc start=/^\s*#\s*\(if\|else\|endif\|ifdef\|ifndef\|define\|undef\|include\)/ end=/$/ contains=@cPP,cPPLineCont
 endif
 
 " finishing touches
