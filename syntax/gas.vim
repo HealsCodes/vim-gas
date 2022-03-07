@@ -85,7 +85,7 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 
 " comments etc.
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
-syn match   gasTodo		/\<\%(TODO\|FIXME\|NOTE\)\>/ contained
+syn match   gasTodo		/\<\%(TODO\|FIXME\|NOTE\|XXX\)\>/ contained
 syn region  gasComment		start=/\/\*/ end=/\*\// contains=gasTodo
 syn region  gasCommentSingle    start=/#/ end=/$/ contains=gasTodo
 syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTodo
