@@ -17,6 +17,23 @@ setlocal iskeyword +=%,.,-,_
 
 syn case ignore
 
+" symbols and labels
+" - these need to appear at the top to get lowest precedence
+
+syn match   gasLabel		/[-_$.A-Za-z0-9]\+\s*:/
+syn match   gasSymbol		/\<[^; \t()]\+\>/
+syn match   gasSymbolRef	/\$[-_$.A-Za-z][-_$.A-Za-z0-9]*\>/
+syn match   gasSpecial		/\<[$.]\>/
+
+" constants
+syn region  gasString		start=/"/  end=/"/ skip=/\\"/
+syn match   gasCharacter	/'\(?\|\\?\)/
+syn match   gasDecimalNumber	/\$\?-\?\d\+/
+syn match   gasBinaryNumber	/\$\?-\?0b[01]\+/
+syn match   gasOctalNumber	/\$\?-\?0\d\+/
+syn match   gasHexNumber	/\$\?-\?0x\x\+/
+" -- TODO: gasFloatNumber
+
 " directives
 syn keyword gasDirective	.abort .ABORT .align .balignw .balignl
 syn keyword gasDirective	.bundle_align_mode .bundle_lock .bundle_unlock .bss
@@ -63,22 +80,6 @@ syn match gasRegisterAVX	/\<%ymm\([0-9]\|1[0-5]\)\>/
 syn match gasRegisterAVX512	/\<%ymm\(1[6-9]\|2[0-9]\|3[0-1]\)\>/
 syn match gasRegisterAVX512	/\<%zmm\([0-9]\|[1-2][0-9]\|3[0-1]\)\>/
 
-" symbols and labels
-
-syn match   gasLabel		/[-_$.A-Za-z0-9]\+\s*:/
-syn match   gasSymbol		/\<[^; \t()]\+\>/
-syn match   gasSymbolRef	/\$[-_$.A-Za-z][-_$.A-Za-z0-9]*\>/
-syn match   gasSpecial		/\<[$.]\>/
-
-" constants
-syn region  gasString		start=/"/  end=/"/ skip=/\\"/
-syn match   gasCharacter	/'\(?\|\\?\)/
-syn match   gasDecimalNumber	/\$\?-\?\d\+/
-syn match   gasBinaryNumber	/\$\?-\?0b[01]\+/
-syn match   gasOctalNumber	/\$\?-\?0\d\+/
-syn match   gasHexNumber	/\$\?-\?0x\x\+/
-" -- TODO: gasFloatNumber
-
 " local label needs to be matched *after* numerics
 syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 
@@ -99,8 +100,8 @@ syn keyword gasDirectiveARM	.arch .arch_expression .arm .asciiz .cantunwind .cod
 
 " ARM register set
 " Must be defined after gasSymbol to have higher precedence
-syn keyword gasRegisterARM	        sp lr pc
-syn match   gasRegisterARM	        /\<%\?r\([0-9]\|1[0-5]\)\>/
+syn keyword gasRegisterARM		sp lr pc
+syn match   gasRegisterARM		/\<%\?r\([0-9]\|1[0-5]\)\>/
 
 syn keyword gasDirectiveMacroARM	.dn .dq .req .unreq .tlsdescseq
 
