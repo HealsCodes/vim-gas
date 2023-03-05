@@ -105,6 +105,9 @@ syn match   gasRegisterARM		/\<%\?r\([0-9]\|1[0-5]\)\>/
 
 syn keyword gasDirectiveMacroARM	.dn .dq .req .unreq .tlsdescseq
 
+" AVR register set
+syn match   gasRegisterAVR		/\<r\([0-9]\|1[0-9]\|2[0-9]\|3[01]\)\>/
+
 " finally: Opcodes
 "
 "-- Section: Willamette MMX instructions (SSE2 SIMD Integer Instructions)
@@ -1964,6 +1967,7 @@ hi def link gasDirectiveARM	        gasDirective
 hi def link gasRegisterARM	        gasRegister
 hi def link gasDirectiveMacroARM	gasDirectiveMacro
 hi def link gasDirectiveStoreARM	gasDirectiveStore
+hi def link gasRegisterAVR		gasRegister
 
 " link to defaults
 hi def link gasDirective	Preproc
