@@ -12,7 +12,7 @@ Opcodes supporting a size suffix are recognized plain as well as suffixed with b
 
 ## What does it look like?
 
-![screenshot here..](https://raw.githubusercontent.com/Shirk/vim-gas/master/sample.png)
+![screenshot here..](https://raw.githubusercontent.com/HealsCodes/vim-gas/master/sample.png)
 
 ## Supported instructions a per version 0.16: 
 
@@ -131,11 +131,11 @@ Add this line to the end of your file:
 
         $ mkdir -p ~/.vim/bundle
         $ cd ~/.vim/bundle
-        $ git clone https://github.com/Shirk/vim-gas
+        $ git clone https://github.com/HealsCodes/vim-gas
 
 - OR use git submodules:
 
-        $ git submodule add https://github.com/Shirk/vim-gas.git bundle/vim-gas
+        $ git submodule add https://github.com/HealsCodes/vim-gas.git bundle/vim-gas
         $ git submodule init
 
 ## Installation with Vundle
