@@ -27,7 +27,7 @@ syn match   gasSpecial		/\<[$.]\>/
 
 " constants
 syn region  gasString		start=/"/  end=/"/ skip=/\\"/
-syn match   gasCharacter	/'\(?\|\\?\)/
+syn match   gasCharacter	/'\%(?\|\\?\)/
 syn match   gasDecimalNumber	/\$\?-\?\d\+/
 syn match   gasBinaryNumber	/\$\?-\?0b[01]\+/
 syn match   gasOctalNumber	/\$\?-\?0\d\+/
@@ -68,29 +68,29 @@ syn keyword gasRegisterX86	%rax %rbx %rcx %rdx %rdi %rsi %rsp %rbp
 syn keyword gasRegisterX86	%eax %ebx %ecx %edx %ax %bx %cx %dx %ah %al %bh %bl %ch %cl %dh %dl
 syn keyword gasRegisterX86	%edi %esi %esp %ebp %di %si %sp %bp %sph %spl %bph %bpl
 syn keyword gasRegisterX86	%cs %ds %es %fs %gs %ss %ip %eip %rip %eflags
-syn match   gasRegisterX86	/\<%r\([8-9]\|1[0-5]\)[lwd]\?\>/
+syn match   gasRegisterX86	/\<%r\%([8-9]\|1[0-5]\)[lwd]\?\>/
 
 " i*86 special registers
 syn match gasRegisterX86Cr	/\<%cr[0-8]\>/
 syn match gasRegisterX86Dr	/\<%dr[0-8]\>/
 syn match gasRegisterX86Tr	/\<%tr[0-8]\>/
-syn match gasRegisterX86Fp	/\<%sp\(([0-7])\)\?\>/
+syn match gasRegisterX86Fp	/\<%sp\%(([0-7])\)\?\>/
 syn match gasRegisterX86MMX	/\<%x\?mm[0-7]\>/
-syn match gasRegisterAVX	/\<%ymm\([0-9]\|1[0-5]\)\>/
-syn match gasRegisterAVX512	/\<%ymm\(1[6-9]\|2[0-9]\|3[0-1]\)\>/
-syn match gasRegisterAVX512	/\<%zmm\([0-9]\|[1-2][0-9]\|3[0-1]\)\>/
+syn match gasRegisterAVX	/\<%ymm\%([0-9]\|1[0-5]\)\>/
+syn match gasRegisterAVX512	/\<%ymm\%(1[6-9]\|2[0-9]\|3[0-1]\)\>/
+syn match gasRegisterAVX512	/\<%zmm\%([0-9]\|[1-2][0-9]\|3[0-1]\)\>/
 
 " local label needs to be matched *after* numerics
 syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 
 " comments etc.
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
-syn match   gasTODO		/\<\(TODO\|FIXME\|NOTE\)\>/ contained
-syn region  gasComment		start=/\/\*/ end=/\*\// contains=gasTODO
-syn region  gasCommentSingle    start=/#/ end=/$/ contains=gasTODO
-syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTODO
+syn match   gasTodo		/\<\%(TODO\|FIXME\|NOTE\|XXX\)\>/ contained
+syn region  gasComment		start=/\/\*/ end=/\*\// contains=gasTodo
+syn region  gasCommentSingle    start=/#/ end=/$/ contains=gasTodo
+syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTodo
 if exists('g:gasCppComments')
-	syn region  gasCommentSingle start=/\/\// end=/$/ contains=gasTODO
+	syn region  gasCommentSingle start=/\/\// end=/$/ contains=gasTodo
 endif
 
 " ARM specific directives
@@ -101,7 +101,7 @@ syn keyword gasDirectiveARM	.arch .arch_expression .arm .asciiz .cantunwind .cod
 " ARM register set
 " Must be defined after gasSymbol to have higher precedence
 syn keyword gasRegisterARM		sp lr pc
-syn match   gasRegisterARM		/\<%\?r\([0-9]\|1[0-5]\)\>/
+syn match   gasRegisterARM		/\<%\?r\%([0-9]\|1[0-5]\)\>/
 
 syn keyword gasDirectiveMacroARM	.dn .dq .req .unreq .tlsdescseq
 
@@ -512,7 +512,7 @@ syn keyword gasOpcode_286_Base		arpl
 syn keyword gasOpcode_PENT_Base		bb0_reset
 syn keyword gasOpcode_PENT_Base		bb1_reset
 syn keyword gasOpcode_386_Base		bound boundb boundw boundl boundq
-syn keyword gasOpcode_X64_Base		bsf
+syn keyword gasOpcode_X64_Base		bsf bsfb bsfw bsfl bsfq
 syn keyword gasOpcode_X64_Base		bsr
 syn keyword gasOpcode_X64_Base		bswap
 syn keyword gasOpcode_X64_Base		bt btb btw btl btq
@@ -901,9 +901,9 @@ syn keyword gasOpcode_X64_Base		xchg
 syn keyword gasOpcode_8086_Base		xlatb
 syn keyword gasOpcode_8086_Base		xlat
 syn keyword gasOpcode_386_Base		xor xorb xorw xorl xorq
-syn keyword gasOpcode_X64_Base		cmovcc
-syn match   gasOpcode_8086_Base		/\<j\(e\|ne\|a\|ae\|b\|be\|nbe\|g\|ge\|ng\|nge\|l\|le\|\|z\|nz\|c\|nc\|d\|nd\|o\|no\|p\|np\|s\|ns\)[bwlq]\?\>/
-syn match   gasOpcode_386_Base		/\<set\(e\|ne\|a\|ae\|b\|be\|nbe\|g\|ge\|ng\|nge\|l\|le\|\|z\|nz\|c\|nc\|d\|nd\|o\|no\|p\|np\|s\|ns\)[bwlq]\?\>/
+syn match gasOpcode_X64_Base		/\<cmov\%(a\|ae\|b\|be\|c\|e\|g\|ge\|l\|le\|na\|nae\|nb\|nbe\|nc\|ne\|ng\|nge\|nl\|nle\|no\|np\|ns\|nz\|o\|p\|pe\|po\|s\|z\)[bwlq]\?\>/
+syn match   gasOpcode_8086_Base		/\<j\%(e\|ne\|a\|ae\|b\|be\|nbe\|g\|ge\|ng\|nge\|l\|le\|\|z\|nz\|c\|nc\|d\|nd\|o\|no\|p\|np\|s\|ns\)[bwlq]\?\>/
+syn match   gasOpcode_386_Base		/\<set\%(e\|ne\|a\|ae\|b\|be\|nbe\|g\|ge\|ng\|nge\|l\|le\|\|z\|nz\|c\|nc\|d\|nd\|o\|no\|p\|np\|s\|ns\)[bwlq]\?\>/
 
 "-- Section: VIA (Centaur) security instructions
 syn keyword gasOpcode_PENT_Base		xstore
@@ -1982,7 +1982,7 @@ hi def link gasSpecial		Special
 hi def link gasLabel		Function
 hi def link gasLocalLabel	Label
 hi def link gasOperator		Operator
-hi def link gasTODO		Todo
+hi def link gasTodo		Todo
 hi def link gasOpcode		Keyword
 hi def link gasComment		Comment
 hi def link gasCommentSingle	Comment
@@ -2056,7 +2056,7 @@ if !exists('g:gasDisablePreproc') && !exists('b:gasDisablePreproc')
 	syn include @cPP syntax/c.vim
 	syn match   cPPLineCont "\\$" contained
 
-	syn region  cPPPreProc start=/^\s*#\s*\(if\|else\|endif\|define\|include\)/ end=/$/ contains=@cPP,cPPLineCont
+	syn region  cPPPreProc start=/^\s*#\s*\%(if\|else\|endif\|ifdef\|ifndef\|define\|undef\|include\)/ end=/$/ contains=@cPP,cPPLineCont
 endif
 
 " finishing touches
